@@ -8,13 +8,13 @@
       @include susy-media($sidebar-break) {
         display: inline-block;
         height: 75px;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
       }
 
       @include susy-media($mid-sidebar-break) {
         display: inline-block;
         height: 100px;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
       }
     }
 

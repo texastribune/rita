@@ -42,7 +42,7 @@
 {% endmacro %}
 
 {% macro image(value) %}
-<figure class="image{% if value.alignment %} image--{{ value.alignment }}{% endif %}">
+<figure class="image{% if value.alignment %} image--{{ value.alignment }}{% else %} image--full{% endif %}">
   <img class="image__img" src="{{ data.PATH_PREFIX}}assets/images/{{ value.photo_url }}">
   <figcaption class="image__caption">{{ value.caption }}{% if value.credit %} | {{ value.credit }}{% endif %}</figcaption>
 </figure>
@@ -71,4 +71,8 @@
   </dl>
   </div>
 </aside>
+{% endmacro %}
+
+{% macro latest_story(value) %}
+<p class="story-prose__lede"><a href="{{ data.PATH_PREFIX }}{{ value.id }}.html">{{ value.text }}</a></p>
 {% endmacro %}
