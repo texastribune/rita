@@ -58,3 +58,17 @@
   {% endfor %}
   </div>
 {% endmacro %}
+
+{% macro inline_list(value) %}
+<aside class="inline inline--right">
+  <div class="inline-list">
+  <h3 class="inline-list__header">{{ value.header }}</h3>
+  <dl class="inline-list__list">
+    {% for item in value.list %}
+    <dt class="inline-list__term">{{ item.link }}</dt>
+    <dd class="inline-list__definition">{{ item.summary }}</dd>
+    {% endfor %}
+  </dl>
+  </div>
+</aside>
+{% endmacro %}

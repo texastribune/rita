@@ -16,6 +16,13 @@
       padding-right: 0;
     }
   }
+
+  .gallery-content & {
+    @include susy-media($gallery-container-width) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }
 
 .content-break {

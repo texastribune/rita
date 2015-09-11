@@ -3,6 +3,10 @@
   margin-bottom: 1.5rem;
   width: 100%;
 
+  .gallery-content & {
+    margin-bottom: 4rem;
+  }
+
   &--basic {
     max-width: 40.625rem;
   }
@@ -56,6 +60,15 @@
     font-family: $font-sofia-pro-condensed;
     letter-spacing: .05em;
     line-height: 1.2;
+
+    .gallery-content & {
+      @extend %content-padding;
+      @include font-size(14);
+
+      @include susy-media($sidebar-break) {
+        @include font-size(16);
+      }
+    }
 
     .invert & {
       color: $color-white;

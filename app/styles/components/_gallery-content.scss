@@ -1,5 +1,5 @@
 .gallery-content {
-  @include container(75em);
+  @include container($gallery-container-width);
 
   &__intro {
     margin-bottom: 2rem;
