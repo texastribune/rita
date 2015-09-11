@@ -1,0 +1,41 @@
+.story-header {
+  @include clearfix;
+  margin: 0 0 1rem;
+
+  &__headline {
+    @extend %content-padding;
+    @include font-size(32);
+    color: $color-dark-storm;
+    font-family: $font-sofia-pro-condensed;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 .25em;
+
+    @include susy-media($sidebar-break) {
+      @include font-size(40);
+      line-height: 1.2;
+    }
+
+    &--invert {
+      color: $color-white;
+    }
+  }
+
+  &__byline {
+    @extend %content-padding;
+    @include font-size(14);
+    color: $color-dark-storm;
+    font-family: $font-georgia;
+    margin: 0 0 2rem;
+  }
+
+  &__byline-link {
+    color: $color-sign-green;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  &__shares {
+    @extend %content-padding;
+  }
+}

@@ -1,0 +1,49 @@
+.sidebar {
+  @include clearfix;
+  background-color: $color-light-storm;
+  color: $color-white;
+  display: table;
+  margin-bottom: 1.5rem;
+  padding: .625rem;
+  width: 100%;
+
+  @include susy-media($sidebar-break) {
+    display: block;
+    height: 100%;
+    // padding: 2rem 0 2rem 3.5rem;
+    padding: 2rem 0 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 22%;
+  }
+
+  &__left {
+    float: left;
+
+    @include susy-media($sidebar-break) {
+      float: none;
+    }
+  }
+
+  &__right {
+    float: right;
+
+    @include susy-media($sidebar-break) {
+      float: none;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__logos {
+    display: inline;
+
+    @include susy-media($sidebar-break) {
+      display: block;
+      text-align: center;
+    }
+  }
+}

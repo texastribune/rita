@@ -1,0 +1,78 @@
+.image {
+  @include clearfix;
+  margin-bottom: 1.5rem;
+  width: 100%;
+
+  &--basic {
+    max-width: 40.625rem;
+  }
+
+  &--left {
+    @include susy-media($sidebar-break) {
+      float: left;
+      margin-bottom: 2rem;
+      margin-right: 1rem;
+      width: 45%;
+    }
+  }
+
+  &--left-lock {
+    float: left;
+    margin-bottom: 2rem;
+    margin-right: 1rem;
+    width: 45%;
+  }
+
+  &--right {
+    @include susy-media($sidebar-break) {
+      float: right;
+      margin-bottom: 2rem;
+      margin-left: 1rem;
+      width: 50%;
+    }
+  }
+
+  &--right-lock {
+    float: right;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 50%;
+  }
+
+  &--lead-art {
+    margin-bottom: 3rem;
+  }
+
+  &__img {
+    margin-bottom: .3125rem;
+    vertical-align: bottom;
+    width: 100%;
+  }
+
+  &__caption {
+    @include font-size(12);
+    color: $color-light-storm;
+    font-family: $font-sofia-pro-condensed;
+    letter-spacing: .05em;
+    line-height: 1.2;
+
+    .invert & {
+      color: $color-white;
+    }
+  }
+}
+
+.image-gallery {
+  @include clearfix;
+
+  &__item {
+    &--half {
+      @include gallery(6 of 12);
+    }
+
+    &--triple {
+      @include gallery(4 of 12);
+    }
+  }
+}

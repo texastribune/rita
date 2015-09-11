@@ -1,0 +1,118 @@
+.inline {
+  border-bottom: 2px solid $color-raincoat-yellow;
+  border-top: 2px solid $color-raincoat-yellow;
+  margin-bottom: 1.5rem;
+
+  &__header {
+    color: $color-dark-storm;
+    font-family: $font-sofia-pro-condensed;
+    font-size: 1.375rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &--left {
+    @include susy-media($sidebar-break) {
+      border-bottom: 0;
+      border-right: 2px solid $color-raincoat-yellow;
+      border-top: 0;
+      float: left;
+      margin-bottom: 2rem;
+      margin-right: 2rem;
+      width: 50%;
+    }
+  }
+
+  &--right {
+    @include susy-media($sidebar-break) {
+      border-bottom: 0;
+      border-left: 2px solid $color-raincoat-yellow;
+      border-top: 0;
+      float: right;
+      margin-bottom: 2rem;
+      margin-left: 2rem;
+      width: 50%;
+    }
+  }
+
+  &--full-left {
+    border-bottom: 0;
+    border-left: 2px solid $color-raincoat-yellow;
+    border-top: 0;
+    margin-left: 2rem;
+  }
+}
+
+.blockquote {
+  margin: 1rem 2rem;
+
+  &__quote {
+    @include font-size(24);
+    font-family: $font-sofia-pro-condensed;
+    font-weight: 700;
+    letter-spacing: .03em;
+    line-height: 1.2;
+    margin: 0 0 1rem;
+    quotes: '\201C' '\201D' '\2018' '\2019';
+
+    @include susy-media($sidebar-break) {
+      @include font-size(28);
+    }
+
+    &:before {
+      content: open-quote;
+    }
+
+    &:after {
+      content: close-quote;
+    }
+  }
+
+  &__caption {
+    @include font-size(16);
+    font-family: $font-sofia-pro-condensed;
+    font-style: normal;
+
+    @include susy-media($sidebar-break) {
+      @include font-size(18);
+    }
+
+    &:before {
+      content: '\2013\20';
+    }
+  }
+}
+
+.list {
+  margin: 1rem;
+  padding: 0;
+}
+
+.inline-list {
+  margin: 1rem 2rem;
+
+  &__header {
+    @include font-size(20);
+    font-family: $font-sofia-pro-condensed;
+    font-weight: 700;
+    letter-spacing: .05em;
+    line-height: 1;
+    margin-bottom: .5em;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    list-style: disc inside;
+  }
+
+  &__item {
+    @include font-size(16);
+    color: $color-dark-storm;
+    font-family: $font-sofia-pro-condensed;
+    font-weight: 500;
+
+    @include susy-media($sidebar-break) {
+      @include font-size(18);
+    }
+  }
+}

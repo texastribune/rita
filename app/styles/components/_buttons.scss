@@ -1,0 +1,33 @@
+.btn {
+  @include font-size(16);
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 1rem 0;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+
+  &--large {
+    @include font-size(32);
+  }
+
+  &--sans {
+    font-family: $font-sofia-pro-condensed;
+    font-weight: 700;
+    letter-spacing: .1em;
+  }
+
+  &--raincoat-yellow {
+    background-color: $color-raincoat-yellow;
+    border-color: $color-raincoat-yellow;
+    color: $color-white;
+
+    &:hover {
+      background-color: darken($color-raincoat-yellow, 10%);
+      border-color: darken($color-raincoat-yellow, 10%);
+    }
+  }
+}

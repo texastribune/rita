@@ -1,0 +1,39 @@
+.project-title {
+  text-align: center;
+
+  &__image {
+    &--desktop {
+      display: none;
+
+      @include susy-media($sidebar-break) {
+        display: inline-block;
+        height: 75px;
+        margin-bottom: 1.5rem;
+      }
+
+      @include susy-media($mid-sidebar-break) {
+        display: inline-block;
+        height: 100px;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    &--mobile {
+      height: 24px;
+      vertical-align: middle;
+
+      @include susy-media($sidebar-break) {
+        display: none;
+      }
+    }
+
+    &--banner {
+      height: 24px;
+      vertical-align: middle;
+
+      @include susy-media($sidebar-break) {
+        height: 32px;
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.stories-list {
+  border-bottom: 2px solid $color-overcast;
+  list-style: none;
+  margin-bottom: .375rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding-bottom: .875rem;
+
+  &__story {
+    @include clearfix;
+    font-family: $font-sofia-pro-condensed;
+    margin-bottom: .75rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__story-link {
+    color: $color-white;
+
+    &:hover {
+      color: $color-light-sign-green;
+    }
+
+    &--is-active {
+      color: $color-light-sign-green;
+    }
+
+    &--is-disabled {
+      color: transparentize($color-white, .5);
+      cursor: default;
+
+      &:hover {
+        color: transparentize($color-white, .5);
+      }
+    }
+  }
+
+  &__number {
+    @include font-size(48);
+    float: left;
+    font-weight: 900;
+    line-height: 1;
+    width: 15%;
+  }
+
+  &__headline {
+    @include font-size(16);
+    float: left;
+    letter-spacing: .03em;
+    line-height: 1.2;
+
+    @include susy-media($mid-sidebar-break) {
+      @include font-size(18);
+    }
+  }
+}

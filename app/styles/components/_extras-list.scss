@@ -1,0 +1,25 @@
+.extras-list {
+  &__link {
+    @include font-size(18);
+    color: $color-white;
+    display: block;
+    font-family: $font-sofia-pro-condensed;
+    font-weight: 700;
+    letter-spacing: .0875em;
+    padding-bottom: .5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: .5rem;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @include susy-media($mid-sidebar-break) {
+      @include font-size(20);
+    }
+
+    &:hover {
+      background-color: $color-light-sign-green;
+    }
+  }
+}

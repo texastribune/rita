@@ -1,0 +1,66 @@
+{% extends 'layouts/standard.html' %}
+
+{% set headline = 'The Road From Hurricane Rita' %}
+
+{% block main_class %}event-content{% endblock %}
+
+{% block header %}
+{{ super() }}
+<section class="event-lead">
+  <h1 class="event-lead__headline">The Road From<br>Hurricane Rita</h1>
+</section>
+{% endblock %}
+
+{% block content %}
+<section class="story-prose event-prose">
+  <div class="story-prose__shares">
+    <ul class="share-row">
+      <li class="share-row__icon"><a href="#"><i class="icon-twitter"></i></a></li>
+      <li class="share-row__icon"><a href="#"><i class="icon-facebook"></i></a></li>
+      <li class="share-row__icon"><a href="#"><i class="icon-envelope"></i></a></li>
+    </ul>
+  </div>
+  <p class="story-prose__lede only-child">The Texas Tribune and the <em class="italic">Beaumont Enterprise</em> are pleased to present a special event marking the 10th anniversary of Hurricane Rita's landfall on the Texas Gulf Coast, and their forthcoming joint reporting project, Road From Rita.</p>
+</section>
+
+<div class="clearfix">
+<section class="event-intro">
+<p class="event-intro__subhead"><time datetime="2015-09-22" title="2015-09-22">Tuesday, September 22, 2015</time></p>
+<p class="event-intro__subhead event-intro__subhead--small-margin"><time datetime="2015-09-22T11:30">11:30 a.m.</time>&ndash;<time datetime="2015-09-22T13:00">1 p.m.</time></p>
+<p class="event-intro__sans-text">Conversation begins at <time datetime="2015-09-22T12:00">noon</time></p>
+<address class="event-intro__address">
+<span class="event-intro__subhead event-intro__subhead--small-margin">Lamar University</span><br>
+<span class="event-intro__venue">Setzer Center Ballroom</span><br>
+4400 S. Martin Luther King Jr. Parkway<br>
+Beaumont, TX 77705
+</address>
+</section>
+<section class="event-rsvp">
+<a href="http://www.eventbrite.com/e/the-road-from-hurricane-rita-registration-17866396874" class="btn btn--raincoat-yellow btn--sans btn--large">RSVP</a>
+</section>
+</div>
+
+<section class="event-prose story-prose">
+  <p>Join us at Lamar University for a discussion on lessons learned from Hurricane Rita, and whether Texas is better prepared for such storms in its aftermath. The dialogue will include a look ahead to the future of emergency management and mass evacuation plans in Texas. Tribune Editor Emily Ramshaw will moderate.</p>
+
+  <aside class="inline inline--full-left">
+    <div class="inline-list">
+    <h3 class="inline-list__header">Panelists include</h3>
+    <ul class="inline-list__list">
+      <li class="inline-list__item">State Rep. Joe Deshotel, D-Beaumont</li>
+      <li class="inline-list__item">Carl Griffith, former Jefferson County judge</li>
+      <li class="inline-list__item">Debbra Mamula, adviser to Lt. Gov. Dan Patrick and former executive vice president of the Texas Oil and Gas Association</li>
+      <li class="inline-list__item">Brad Penisson, captain with the Beaumont Fire Department</li>
+    </ul>
+    </div>
+  </aside>
+
+  <p><strong class="bold">In addition to the panel discussion, we invite storm survivors to come early to share video testimonials of their Rita experience.</strong> The testimonials will be filmed from 10 a.m. to noon and 1 to 2 p.m. in the Setzer Center, Room 133, and will be shared on the website for the Road From Rita project.</p>
+
+  <p>This event will be held in the Setzer Center Ballroom at Lamar University in Beaumont. It is free and open to the public and includes a light lunch.</p>
+
+  <p>The conversation will also be livestreamed at <a href="http://www.texastribune.org/livestream/">texastribune.org/livestream</a>. The video will be accessible for viewing afterward.</p>
+</section>
+
+{% include 'partials/storygrid.html' %}
+{% endblock %}

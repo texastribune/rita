@@ -1,0 +1,9 @@
+.content {
+  @include susy-media($sidebar-break) {
+    margin-bottom: 2rem;
+    margin-left: 28%;
+    margin-top: 2rem;
+    max-width: 54rem;
+    padding: 0 1rem;
+  }
+}

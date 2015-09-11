@@ -1,0 +1,8 @@
+.invert {
+  background-color: rgb(32, 32, 32);
+  color: $color-white;
+}
+
+.event-content {
+  @include container(52em);
+}

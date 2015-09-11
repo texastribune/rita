@@ -1,0 +1,30 @@
+.gallery-content {
+  @include container(75em);
+
+  &__intro {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+
+  &__photos {
+    border-bottom: 2px solid $color-raincoat-yellow;
+    border-top: 2px solid $color-raincoat-yellow;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+  }
+
+  &__narrow {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 50rem;
+  }
+}
+
+.gallery-prose.story-prose > p {
+  max-width: none;
+
+  &:last-child {
+    margin-bottom: 2rem;
+  }
+}

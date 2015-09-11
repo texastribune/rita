@@ -1,0 +1,20 @@
+.nav {
+  display: none;
+  font-family: $font-sofia-pro-condensed;
+  // padding: 0 0 .625rem;
+
+  @include susy-media($sidebar-break) {
+    display: block;
+    text-align: left;
+  }
+
+  &__title {
+    border-bottom: 2px solid $color-overcast;
+    letter-spacing: .07em;
+    margin-bottom: .625rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-bottom: .625rem;
+    text-transform: uppercase;
+  }
+}

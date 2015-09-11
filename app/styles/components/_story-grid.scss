@@ -1,0 +1,73 @@
+.other-stories {
+  @extend %content-padding;
+  @include clearfix;
+  margin-bottom: 1.5rem;
+  width: 100%;
+
+  &__header {
+    @include font-size(24);
+    color: $color-dark-storm;
+    font-family: $font-sofia-pro-condensed;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+
+    .invert & {
+      color: $color-white;
+    }
+  }
+
+  &__cell {
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 1rem;
+
+    @include susy-media($sidebar-break) {
+      @include gallery(6 of 12);
+    }
+  }
+}
+
+.story-box {
+  &__image {
+    float: left;
+    padding-right: .625rem;
+    width: 50%;
+  }
+
+  &__blurb {
+    float: left;
+    width: 50%;
+  }
+
+  &__header {
+    @include font-size(18);
+    color: $color-dark-storm;
+    font-family: $font-sofia-pro-condensed;
+    font-weight: 500;
+    margin-bottom: .5rem;
+
+    .invert & {
+      color: $color-white;
+    }
+
+    .story-box:hover & {
+      text-decoration: underline;
+    }
+  }
+
+  &__text {
+    @include font-size(14);
+    color: $color-dark-storm;
+    font-family: $font-georgia;
+    line-height: 1.3;
+
+    .invert & {
+      color: $color-white;
+    }
+
+    .story-box:hover & {
+      text-decoration: underline;
+    }
+  }
+}

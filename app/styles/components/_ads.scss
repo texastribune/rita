@@ -1,0 +1,37 @@
+.ad-slot {
+  border-bottom: 1px solid lighten($color-overcast, 20%);
+  border-top: 1px solid lighten($color-overcast, 20%);
+  margin: 0 0 1.5rem;
+  padding: 1rem 0;
+  text-align: center;
+
+  @include susy-media($sidebar-break) {
+    text-align: left;
+  }
+
+  .gallery-content & {
+    border-bottom: 0;
+    border-top: 0;
+    text-align: center;
+  }
+
+  &__ad {
+    vertical-align: bottom;
+
+    &--desktop {
+      display: none;
+
+      @include susy-media($sidebar-break) {
+        display: inline-block;
+      }
+    }
+
+    &--mobile {
+      text-align: center;
+
+      @include susy-media($sidebar-break) {
+        display: none;
+      }
+    }
+  }
+}

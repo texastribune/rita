@@ -1,0 +1,80 @@
+$footer-break: 56.25em; // 900px
+
+.footer {
+  background-color: $color-dark-storm;
+  font-family: $font-helvetica;
+  letter-spacing: .03em;
+  padding: .625rem 0;
+
+  nav {
+    @include susy-media($footer-break) {
+      float: left;
+    }
+
+    &.last-nav {
+      @include susy-media($footer-break) {
+        float: right;
+      }
+    }
+
+    a {
+      color: $color-white;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  ul {
+    display: block;
+  }
+
+  li {
+    @include susy-media(max-width $footer-break) {
+      @include font-size(14);
+      @include gallery(6 of 12);
+      color: $color-white;
+      padding: .5rem 0;
+      text-align: center;
+    }
+
+    @include susy-media($footer-break) {
+      @include font-size(12);
+      border-left: 1px solid $color-white;
+      float: left;
+      padding: 0 .5rem;
+      text-align: left;
+    }
+
+    &:first-child {
+      border-left: 0;
+      padding-left: 0;
+    }
+  }
+
+  .copywrite {
+    color: $color-white;
+    width: 100%;
+
+    a {
+      color: $color-white;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .donate {
+    a {
+      color: $color-raincoat-yellow;
+      font-weight: 800;
+    }
+  }
+}
+
+.footer-container {
+  @extend %content-padding;
+  @include container(70em);
+}

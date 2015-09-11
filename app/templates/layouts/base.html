@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> {{ context.headline or headline }} | Road From Rita</title>
+  <link rel="stylesheet" href="{{ data.PATH_PREFIX }}styles/main.css">
+  {% include 'partials/meta.html' %}
+  {% include 'partials/typekit.html' %}
+  <script src="{{ data.PATH_PREFIX }}scripts/ads.js" async></script>
+</head>
+<body class="{% block body_class %}{% endblock %}">
+{% block header %}{% endblock %}
+<main class="{% block main_class %}{% endblock %}" role="main">
+{% block content %}{% endblock %}
+</main>
+{% block footer %}{% endblock %}
+{% include 'partials/ga.html' %}
+</body>
+</html>

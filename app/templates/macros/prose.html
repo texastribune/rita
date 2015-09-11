@@ -1,0 +1,60 @@
+{% macro text(value) %}
+<p>{{ value }}</p>
+{% endmacro %}
+
+{% macro lede(value) %}
+<p class="story-prose__lede">{{ value }}</p>
+{% endmacro %}
+
+{% macro first(value) %}
+<p class="story-prose__lede story-prose__drop-cap">{{ value }}</p>
+{% endmacro %}
+
+{% macro subhead(value) %}
+<h2 class="story-prose__subhead">{{ value }}</h2>
+{% endmacro %}
+
+{% macro basic_list(value) %}
+<ul class="story-prose__list">
+  {% for item in value %}
+  <li class="story-prose__list-item">{{ item }}</li>
+  {% endfor %}
+</ul>
+{% endmacro %}
+
+{% macro blockquote(value) %}
+<aside class="inline{% if value.align %} inline--{{ value.align }}{% endif %}">
+  <blockquote class="blockquote">
+    <p class="blockquote__quote">{{ value.quote }}</p>
+    {% if value.caption %}<cite class="blockquote__caption">{{ value.caption }}</cite>{% endif %}
+  </blockquote>
+</aside>
+{% endmacro %}
+
+{% macro ad(value) %}
+<aside class="ad-slot">
+  <div class="banner-ad" id="gpt-ad-{{ value }}"></div>
+</aside>
+{% endmacro %}
+
+{% macro disclosure(value) %}
+<p class="story-prose__disclosure">{{ value }}</p>
+{% endmacro %}
+
+{% macro image(value) %}
+<figure class="image{% if value.alignment %} image--{{ value.alignment }}{% endif %}">
+  <img class="image__img" src="{{ data.PATH_PREFIX}}assets/images/{{ value.photo_url }}">
+  <figcaption class="image__caption">{{ value.caption }}{% if value.credit %} | {{ value.credit }}{% endif %}</figcaption>
+</figure>
+{% endmacro %}
+
+{% macro image_gallery(value) %}
+  <div class="image-gallery">
+  {% for image in value.images %}
+  <figure class="image image-gallery__item{% if value.arrangement %} image-gallery__item--{{ value.arrangement }}{% endif %}">
+    <img class="image__img" src="{{ data.PATH_PREFIX }}assets/images/{{ image.photo_url }}">
+    {% if image.caption %}<figcaption class="image__caption">{{ image.caption }}</figcaption>{% endif %}
+  </figure>
+  {% endfor %}
+  </div>
+{% endmacro %}

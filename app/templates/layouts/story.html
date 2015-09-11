@@ -1,0 +1,85 @@
+{% extends 'layouts/base.html' %}
+
+{% from 'macros/authors.html' import authors %}
+{% import 'macros/prose.html' as prose %}
+
+{% set story_grid_headline = 'Other stories' %}
+
+{% block main_class %}content{% endblock %}
+
+{% block header %}
+<header class="sidebar" role="banner">
+    <h2 class="logos logos--sidebar">
+      <div class="logos__faux-border">
+        <a class="sidebar__link logos__link" href="http://www.texastribune.org/" alt="The Texas Tribune">
+          <img class="logos__image logos__image--tribune" src="{{ data.PATH_PREFIX }}assets/images/logos/texas-tribune.svg">
+        </a>
+      </div>
+      <a class="sidebar__link logos__link" href="http://www.beaumontenterprise.com/" alt="The Beaumont Enterprise">
+        <img class="logos__image logos__image--beaumont" src="{{ data.PATH_PREFIX }}assets/images/logos/beaumont-enterprise.svg">
+      </a>
+    </h2>
+  <h1 class="sidebar__right project-title">
+    <a class="project-title__link" href="{{ data.PATH_PREFIX }}">
+      <img class="project-title__image project-title__image--mobile" src="{{ data.PATH_PREFIX }}assets/images/logos/mobile-logo.svg" alt="Road to Rita">
+      <img class="project-title__image project-title__image--desktop" src="{{ data.PATH_PREFIX }}assets/images/logos/desktop-logo.svg" alt="Road to Rita">
+    </a>
+  </h1>
+
+  <nav class="nav">
+    <h3 class="nav__title">Stories</h3>
+    <ul class="stories-list">
+       {% for story in data.metadata.storylist %}
+      <li class="stories-list__story">
+        <a class="stories-list__story-link{% if context.id == story.id %} stories-list__story-link--is-active{% endif %}" href="{{ data.PATH_PREFIX }}{{ story.slug }}.html">
+          <span class="stories-list__headline">{{ data[story.id].short_head }}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    <ul class="extras-list">
+      <li class="extras-list__item">
+        <a class="extras-list__link" href="{{ data.PATH_PREFIX }}event.html">Beaumont Event</a>
+      </li>
+      <li class="extras-list__item">
+        <a class="extras-list__link" href="{{ data.PATH_PREFIX }}photo-gallery.html">Photo Gallery</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+{% endblock %}
+
+{% block content %}
+<header class="story-header">
+  <h1 class="story-header__headline">{{ context.headline }}</h1>
+  <p class="story-header__byline"> by {{ authors(context.authors) }} | {{ context.pub_date }}</p>
+  <div class="story-header__shares">
+    <ul class="share-row">
+      <li class="share-row__icon"><a href="#"><i class="icon-twitter"></i></a></li>
+      <li class="share-row__icon"><a href="#"><i class="icon-facebook"></i></a></li>
+      <li class="share-row__icon"><a href="#"><i class="icon-envelope"></i></a></li>
+    </ul>
+  </div>
+  </div>
+</header>
+
+<figure class="image image--lead-art">
+  <img class="image__img" src="{{ data.PATH_PREFIX}}assets/images/{{ context.lead_art.photo_url }}">
+  <figcaption class="image__caption">{{ context.lead_art.caption }}{% if context.lead_art.credit %} | {{ context.lead_art.credit }}{% endif %}</figcaption>
+</figure>
+
+<article class="story-prose">
+{% for item in context.prose %}
+{{ prose[item.type](item.value) }}
+{% endfor %}
+{% if context.disclosure %}
+{{ prose.disclosure(context.disclosure) }}
+{% endif %}
+{% if context.republish %}
+{{ prose.disclosure(context.republish) }}
+{% endif %}
+</article>
+
+{% include 'partials/storygrid.html' %}
+{% include 'partials/comments.html' %}
+{% endblock %}

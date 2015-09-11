@@ -1,0 +1,101 @@
+.story-prose {
+  @include font-size(18);
+  color: $color-dark-storm;
+  font-family: $font-georgia;
+  line-height: 1.6;
+
+  @include susy-media($sidebar-break) {
+    @include font-size(18);
+  }
+
+  .invert & {
+    color: $color-white;
+  }
+
+  > p {
+    @extend %content-padding;
+    margin-bottom: 1.5rem;
+    max-width: 40.625rem;
+
+    &:last-child {
+      margin-bottom: 3rem;
+    }
+
+    &.only-child {
+      margin-bottom: 1.5rem;
+    }
+
+    .invert & {
+      width: 100%;
+    }
+  }
+
+  a {
+    color: $color-sign-green;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__subhead {
+    @extend %content-padding;
+    @include font-size(20);
+    font-family: $font-sofia-pro-condensed;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  &--border-bottom {
+    border-bottom: 2px solid $color-raincoat-yellow;
+  }
+
+  &__lede {
+    @include font-size(20);
+    font-family: $font-sofia-pro-condensed;
+    line-height: 1.4;
+
+    @include susy-media($sidebar-break) {
+      @include font-size(22);
+    }
+
+    .gallery-prose & {
+      @include font-size(18);
+    }
+  }
+
+  &__drop-cap {
+    &:first-letter {
+      @include font-size(72);
+      color: $color-overcast;
+      float: left;
+      font-family: $font-sofia-pro-condensed;
+      font-weight: 900;
+      line-height: 1;
+      padding: 0 .25em;
+
+      @include susy-media($sidebar-break) {
+        @include font-size(80);
+      }
+    }
+  }
+
+  &__list {
+    @extend %content-padding;
+    list-style: disc inside;
+    margin-bottom: 1.5rem;
+    max-width: 40.625rem;
+    padding-left: 1.5rem;
+  }
+
+  &__disclosure {
+    @include font-size(16);
+    color: lighten($color-dark-storm, 20%);
+    font-style: italic;
+  }
+
+  &__shares {
+    @extend %content-padding;
+    margin-bottom: 1.5rem;
+  }
+}

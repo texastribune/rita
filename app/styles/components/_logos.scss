@@ -1,0 +1,60 @@
+$logo-image-height: 25px;
+
+.logos {
+  display: table-cell;
+  vertical-align: middle;
+
+  &--sidebar {
+    @include susy-media($sidebar-break) {
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__faux-border {
+    border-right: 2px solid $color-white;
+    float: left;
+    margin-right: 5px;
+    padding-right: 5px;
+
+    @include susy-media($mid-sidebar-break) {
+      margin-right: 10px;
+      padding-right: 10px;
+    }
+
+    @include susy-media($sidebar-break $mid-sidebar-break) {
+      .sidebar & {
+        border-right: 0;
+        float: none;
+        margin-bottom: .875rem;
+        margin-right: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__image {
+    height: $logo-image-height;
+    vertical-align: bottom;
+
+    @include susy-media($sidebar-break) {
+      height: $logo-image-height * 1.5;
+    }
+
+    &--tribune {
+      margin-bottom: -$logo-image-height * .12;
+
+      @include susy-media($sidebar-break) {
+        margin-bottom: -($logo-image-height * 1.5) * .12;
+      }
+    }
+
+    &--beaumont {
+      height: $logo-image-height - ($logo-image-height * .12);
+
+      @include susy-media($sidebar-break) {
+        height: ($logo-image-height * 1.5) - (($logo-image-height * 1.5) * .12);
+      }
+    }
+  }
+}

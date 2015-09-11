@@ -1,0 +1,57 @@
+{
+  "private": true,
+  "config": {
+    "s3_bucket": "moose.texastribune.org",
+    "slug": "road-from-rita"
+  },
+  "devDependencies": {
+    "archieml": "^0.3.1",
+    "autoprefixer-core": "^5.2.1",
+    "babel-core": "^5.8.23",
+    "browser-sync": "^2.8.2",
+    "chalk": "^1.1.1",
+    "copytext": "^1.1.0",
+    "del": "^2.0.0",
+    "googleapis": "^2.1.3",
+    "got": "^4.1.1",
+    "gulp": "^3.9.0",
+    "gulp-cache": "^0.3.0",
+    "gulp-if": "^1.2.5",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-minify-html": "^1.0.4",
+    "gulp-postcss": "^5.1.10",
+    "gulp-sass": "^2.0.4",
+    "gulp-size": "^2.0.0",
+    "gulp-sourcemaps": "^1.5.2",
+    "html-entities": "^1.1.3",
+    "htmlparser2": "^3.8.3",
+    "jshint-stylish": "^2.0.1",
+    "nunjucks": "^2.0.0",
+    "os-homedir": "^1.0.1",
+    "quaff": "^1.1.0",
+    "run-sequence": "^1.1.2",
+    "vinyl-map": "^1.0.1",
+    "yargs": "^3.23.0"
+  },
+  "dependencies": {
+    "@rdm/scss-base": "^1.0.0",
+    "newsapps-styles": "^1.1.0",
+    "susy": "^2.2.5"
+  },
+  "scripts": {
+    "assets/pull": "./bin/pull_assets_from_s3.sh",
+    "assets/push": "./bin/push_assets_to_s3.sh",
+    "build": "gulp build --production",
+    "clean": "gulp clean",
+    "data/fetch": "node utils/fetch_data.js",
+    "deploy/dev": "./utils/deploy.sh",
+    "serve": "gulp serve",
+    "serve/production": "gulp serve --production",
+    "spreadsheet/authorize": "./bin/authorize.js",
+    "spreadsheet/edit": "./bin/edit_spreadsheet.js",
+    "spreadsheet/fetch": "./bin/fetch_spreadsheet.js"
+  }
+}
