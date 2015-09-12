@@ -1,10 +1,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@texastribune">
 <meta name="twitter:creator" content="@texastribune">
-<meta property="og:url" content="">
+<meta property="og:url" content="{{ data.PATH_FULL }}{{ context.id or page_id }}.html">
 <meta property="og:title" content="{{ context.headline or headline }}">
 <meta property="og:type" content="article">
-<meta property="og:description" content="{% if context.summary %}{{ context.summary }}{% endif %}">
+<meta property="og:description" content="{{ context.summary or summary }}">
 <meta property="og:site_name" content="The Texas Tribune">
-<meta property="og:image" content="{{ PATH_FULL }}{{ context.lead_art.photo_url }}">
+<meta property="og:image" content="{{ data.PATH_FULL }}assets/images/{{ context.lead_art.photo_url or photo_url }}">
 <meta property="fb:app_id" content="154122474650943">
