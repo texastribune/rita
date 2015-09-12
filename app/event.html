@@ -1,5 +1,10 @@
 {% extends 'layouts/standard.html' %}
 
+{% import 'macros/shares.html' as shares %}
+
+{% set headline = 'The Road From Hurricane Rita' %}
+{% set page_id = 'The Road From Hurricane Rita' %}
+{% set headline = 'The Road From Hurricane Rita' %}
 {% set headline = 'The Road From Hurricane Rita' %}
 
 {% block main_class %}event-content{% endblock %}
@@ -16,7 +21,7 @@
   <div class="story-prose__shares">
     <ul class="share-row">
       <li class="share-row__icon"><a href="#"><i class="icon-twitter"></i></a></li>
-      <li class="share-row__icon"><a href="#"><i class="icon-facebook"></i></a></li>
+      <li class="share-row__icon"><a href="{{ shares.facebook(data.PATH_FULL + 'event.html', data.PATH_FULL + 'event.html') }}"><i class="icon-facebook"></i></a></li>
       <li class="share-row__icon"><a href="#"><i class="icon-envelope"></i></a></li>
     </ul>
   </div>
