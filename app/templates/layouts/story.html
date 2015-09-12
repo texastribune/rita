@@ -2,6 +2,7 @@
 
 {% from 'macros/authors.html' import authors %}
 {% import 'macros/prose.html' as prose %}
+{% import 'macros/shares.html' as shares %}
 
 {% set story_grid_headline = 'Other stories' %}
 
@@ -55,8 +56,8 @@
   <p class="story-header__byline"> by {{ authors(context.authors) }} | {{ context.pub_date }}</p>
   <div class="story-header__shares">
     <ul class="share-row">
-      <li class="share-row__icon"><a href="#"><i class="icon-twitter"></i></a></li>
-      <li class="share-row__icon"><a href="#"><i class="icon-facebook"></i></a></li>
+      <li class="share-row__icon"><a href="{{ shares.twitter(data.PATH_FULL + context.id + '.html', context.twitter_text, 'roadfromrita') }}"><i class="icon-twitter"></i></a></li>
+      <li class="share-row__icon"><a href="{{ shares.facebook(data.PATH_FULL + context.id + '.html', data.PATH_FULL + context.id + '.html') }}"><i class="icon-facebook"></i></a></li>
       <li class="share-row__icon"><a href="#"><i class="icon-envelope"></i></a></li>
     </ul>
   </div>
