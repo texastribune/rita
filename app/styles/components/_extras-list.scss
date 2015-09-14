@@ -14,7 +14,7 @@
     text-decoration: none;
     text-transform: uppercase;
 
-    @include susy-media($mid-sidebar-break) {
+    @include susy-media((min-width: $mid-sidebar-break, min-height: $sidebar-height-break)) {
       @include font-size(20);
     }
 

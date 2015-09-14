@@ -7,13 +7,17 @@
 
       @include susy-media($sidebar-break) {
         display: inline-block;
-        height: 75px;
-        margin-bottom: 2rem;
+        height: 65px;
+        margin-bottom: 1.5rem;
       }
 
-      @include susy-media($mid-sidebar-break) {
+      @include susy-media((min-width: $mid-sidebar-break, min-height: $sidebar-height-break)) {
         display: inline-block;
         height: 100px;
+        margin-bottom: 1.5rem;
+      }
+
+      @include susy-media(min-height 43.75em) {
         margin-bottom: 2rem;
       }
     }

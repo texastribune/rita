@@ -1,7 +1,6 @@
 .nav {
   display: none;
   font-family: $font-sofia-pro-condensed;
-  // padding: 0 0 .625rem;
 
   @include susy-media($sidebar-break) {
     display: block;
