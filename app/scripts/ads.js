@@ -28,6 +28,9 @@ googletag.cmd.push(function() {
     .defineSizeMapping(mapping)
     .addService(googletag.pubads());
 
+  googletag.defineSlot('/5805113/TexasTribune_Content_NewsApps_TTRectangle1_300x250', [300, 250], 'gpt-ad-box-1')
+    .addService(googletag.pubads());
+
   googletag.pubads().enableSingleRequest();
   googletag.enableServices();
 });
@@ -36,4 +39,5 @@ googletag.cmd.push(function() {
   googletag.display('gpt-ad-banner-1');
   googletag.display('gpt-ad-banner-2');
   googletag.display('gpt-ad-banner-3');
+  googletag.display('gpt-ad-box-1');
 });

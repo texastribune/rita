@@ -6,6 +6,10 @@ $footer-break: 56.25em; // 900px
   letter-spacing: .03em;
   padding: .625rem 0;
 
+  .content & {
+    background-color: $color-white;
+  }
+
   nav {
     @include susy-media($footer-break) {
       float: left;
@@ -20,6 +24,10 @@ $footer-break: 56.25em; // 900px
     a {
       color: $color-white;
 
+      .content & {
+        color: $color-light-storm;
+      }
+
       &:hover {
         text-decoration: none;
       }
@@ -31,10 +39,11 @@ $footer-break: 56.25em; // 900px
   }
 
   li {
+    color: $color-white;
+
     @include susy-media(max-width $footer-break) {
       @include font-size(14);
       @include gallery(6 of 12);
-      color: $color-white;
       padding: .5rem 0;
       text-align: center;
     }
@@ -45,6 +54,10 @@ $footer-break: 56.25em; // 900px
       float: left;
       padding: 0 .5rem;
       text-align: left;
+    }
+
+    .content & {
+      color: $color-light-storm;
     }
 
     &:first-child {
@@ -60,6 +73,10 @@ $footer-break: 56.25em; // 900px
     a {
       color: $color-white;
 
+      .content & {
+        color: $color-light-storm;
+      }
+
       &:hover {
         text-decoration: none;
       }
@@ -70,6 +87,10 @@ $footer-break: 56.25em; // 900px
     a {
       color: $color-raincoat-yellow;
       font-weight: 800;
+
+      .content & {
+        color: $color-sign-green;
+      }
     }
   }
 }

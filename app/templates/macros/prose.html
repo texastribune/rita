@@ -32,8 +32,8 @@
 {% endmacro %}
 
 {% macro ad(value) %}
-<aside class="ad-slot">
-  <div class="banner-ad" id="gpt-ad-{{ value }}"></div>
+<aside class="ad-slot ad-slot__{{ value.type }}">
+  <div id="gpt-ad-{{ value.type }}-{{ value.id }}"></div>
 </aside>
 {% endmacro %}
 

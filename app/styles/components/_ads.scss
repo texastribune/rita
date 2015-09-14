@@ -1,19 +1,38 @@
 .ad-slot {
-  border-bottom: 1px solid lighten($color-overcast, 20%);
-  border-top: 1px solid lighten($color-overcast, 20%);
-  margin-bottom: 1.5rem;
   padding: 1rem 0;
-  text-align: center;
 
-  @include susy-media($sidebar-break) {
-    text-align: left;
+  &__banner {
+    border-bottom: 1px solid lighten($color-overcast, 20%);
+    border-top: 1px solid lighten($color-overcast, 20%);
+    margin-bottom: 1.5rem;
+    text-align: center;
+
+    @include susy-media($sidebar-break) {
+      text-align: left;
+    }
+
+    .gallery-content & {
+      border-bottom: 0;
+      border-top: 0;
+      margin-bottom: 5rem;
+      text-align: center;
+    }
   }
 
-  .gallery-content & {
-    border-bottom: 0;
-    border-top: 0;
-    margin-bottom: 5rem;
+  &__box {
+    border-bottom: 1px solid lighten($color-overcast, 20%);
+    border-top: 1px solid lighten($color-overcast, 20%);
+    margin-bottom: 1.5rem;
     text-align: center;
+
+    @include susy-media($sidebar-break) {
+      border-bottom: 0;
+      border-left: 1px solid lighten($color-overcast, 20%);
+      border-top: 0;
+      float: right;
+      margin-left: 2rem;
+      padding-left: 2rem;
+    }
   }
 
   &__ad {
