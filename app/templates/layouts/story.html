@@ -32,9 +32,10 @@
     <ul class="stories-list">
        {% for story in data.metadata.storylist %}
       <li class="stories-list__story">
-        <a class="stories-list__story-link{% if context.id == story.id %} stories-list__story-link--is-active{% endif %}" href="{{ data.PATH_PREFIX }}{{ story.slug }}.html">
+        <time class="stories-list__pub-date">{{ data[story.id].pub_date }}</time>
+        {% if story.published %}<a class="stories-list__story-link{% if context.id == story.id %} stories-list__story-link--is-active{% endif %}" href="{{ data.PATH_PREFIX }}{{ story.slug }}.html">{% else %}<span class="stories-list__story-link stories-list__story-link--is-disabled">{% endif %}
           <span class="stories-list__headline">{{ data[story.id].short_head }}</span>
-        </a>
+        {% if story.published %}</a>{% else %}</span>{% endif %}
       </li>
       {% endfor %}
     </ul>
@@ -52,7 +53,7 @@
 
 {% block content %}
 <header class="story-header">
-  <h1 class="story-header__headline">{{ context.headline }}</h1>
+  <h1 class="story-header__headline">{{ context.headline|widont }}</h1>
   <p class="story-header__byline"> by {{ authors(context.authors) }} | {{ context.pub_date }}</p>
   <div class="story-header__shares">
     <ul class="share-row">

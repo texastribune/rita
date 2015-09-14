@@ -7,8 +7,8 @@
 }
 
 %content-padding {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: .625rem;
+  padding-right: .625rem;
 
   @include susy-media($sidebar-break) {
     .content & {

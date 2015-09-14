@@ -32,6 +32,12 @@ data.PATH_FULL = fullPath;
 
 let env = nunjucks.configure(config.templateFolder, {autoescape: false});
 
+env.addFilter('widont', (str) => {
+  let lastSpace = str.trim().lastIndexOf(' ');
+
+  return str.substring(0, lastSpace) + '&nbsp;' + str.substring(lastSpace + 1);
+});
+
 gulp.task('jshint', () => {
   return gulp.src('./app/scripts/**/*.js')
     .pipe(bs.reload({stream: true, once: true}))

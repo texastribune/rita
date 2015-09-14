@@ -55,4 +55,14 @@
       @include font-size(18);
     }
   }
+
+  &__pub-date {
+    @include font-size(14);
+    display: block;
+    line-height: 1.1;
+
+    @include susy-media($mid-sidebar-break) {
+      @include font-size(16);
+    }
+  }
 }

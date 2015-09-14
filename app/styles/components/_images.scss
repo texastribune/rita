@@ -83,7 +83,9 @@
 
     .image--lead-art &,
     .image--full &,
-    .image--basic & {
+    .image--basic &,
+    .image--left &,
+    .image--right & {
       @extend %content-padding;
     }
   }
