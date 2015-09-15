@@ -63,8 +63,16 @@
       content: open-quote;
     }
 
+    &--no-quote:before {
+      content: none;
+    }
+
     &:after {
       content: close-quote;
+    }
+
+    &--no-quote:after {
+      content: none;
     }
   }
 
