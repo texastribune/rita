@@ -41,14 +41,14 @@
 <p class="story-prose__disclosure">{{ value }}</p>
 {% endmacro %}
 
-{% macro image(value) %}
+{% macro image(value, data) %}
 <figure class="image{% if value.alignment %} image--{{ value.alignment }}{% else %} image--full{% endif %}">
-  <img class="image__img" src="{{ data.PATH_PREFIX}}assets/images/{{ value.photo_url }}">
+  <img class="image__img" src="{{ data.PATH_PREFIX }}assets/images/{{ value.photo_url }}">
   <figcaption class="image__caption">{{ value.caption }}{% if value.credit %} | {{ value.credit }}{% endif %}</figcaption>
 </figure>
 {% endmacro %}
 
-{% macro image_gallery(value) %}
+{% macro image_gallery(value, data) %}
   <div class="image-gallery">
   {% for image in value.images %}
   <figure class="image image-gallery__item{% if value.arrangement %} image-gallery__item--{{ value.arrangement }}{% endif %}">
@@ -73,6 +73,6 @@
 </aside>
 {% endmacro %}
 
-{% macro latest_story(value) %}
-<p class="story-prose__lede"><a href="{{ data.PATH_PREFIX }}{{ value.id }}.html">{{ value.text }}</a></p>
+{% macro latest_story(value, data) %}
+<p class="story-prose__lede"><a href="{{ data.PATH_PREFIX }}{{ data.LATEST_STORY.slug }}.html">{{ value.text }}</a></p>
 {% endmacro %}

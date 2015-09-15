@@ -72,7 +72,7 @@
 
 <article class="story-prose">
 {% for item in context.prose %}
-{{ prose[item.type](item.value) }}
+{{ prose[item.type](item.value, data) }}
 {% endfor %}
 {% if context.disclosure %}
 {{ prose.disclosure(context.disclosure) }}
