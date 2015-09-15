@@ -5,3 +5,7 @@ https://www.facebook.com/dialog/share?app_id={{ app_id }}&display={{ display }}&
 {% macro twitter(href, text, hashtags="") %}
 https://twitter.com/share?url={{ href|urlencode }}&text={{ text|urlencode }}{% if hashtags %}&hashtags={{ hashtags|urlencode }}{% endif %}
 {% endmacro %}
+
+{% macro email(subject, body) %}
+mailto:?subject={{ subject|urlencode }}&body={{ body|urlencode }}
+{% endmacro %}

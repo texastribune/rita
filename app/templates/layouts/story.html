@@ -59,7 +59,7 @@
     <ul class="share-row">
       <li class="share-row__icon"><a href="{{ shares.twitter(data.PATH_FULL + context.id + '.html', context.twitter_text, 'roadfromrita') }}"><i class="icon-twitter"></i></a></li>
       <li class="share-row__icon"><a href="{{ shares.facebook(data.PATH_FULL + context.id + '.html', data.PATH_FULL + context.id + '.html') }}"><i class="icon-facebook"></i></a></li>
-      <li class="share-row__icon"><a href="#"><i class="icon-envelope"></i></a></li>
+      <li class="share-row__icon"><a href="{{ shares.email(context.headline + ' | Road From Rita', data.PATH_FULL + context.id + '.html') }}"><i class="icon-envelope"></i></a></li>
     </ul>
   </div>
   </div>
