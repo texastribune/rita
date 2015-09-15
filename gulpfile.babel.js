@@ -144,7 +144,7 @@ gulp.task('clean', cb => {
 });
 
 gulp.task('build', ['clean'], cb => {
-  runSequence(['assets', 'fonts', 'images', 'jshint', 'scripts', 'styles', 'templates'], cb);
+  runSequence(['assets', 'fonts', 'images', 'scripts', 'styles', 'templates'], cb);
 });
 
 gulp.task('default', ['build']);
