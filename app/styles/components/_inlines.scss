@@ -72,6 +72,7 @@
     @include font-size(16);
     font-family: $font-sofia-pro-condensed;
     font-style: normal;
+    line-height: 1;
 
     @include susy-media($sidebar-break) {
       @include font-size(18);
