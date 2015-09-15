@@ -1,11 +1,7 @@
 {% extends 'layouts/standard.html' %}
 
 {% import 'macros/shares.html' as shares %}
-
-{% set headline = 'The Road From Hurricane Rita' %}
-{% set page_id = 'The Road From Hurricane Rita' %}
-{% set headline = 'The Road From Hurricane Rita' %}
-{% set headline = 'The Road From Hurricane Rita' %}
+{% set context = data.event %}
 
 {% block main_class %}event-content{% endblock %}
 
@@ -20,9 +16,9 @@
 <section class="story-prose event-prose">
   <div class="story-prose__shares">
     <ul class="share-row">
-      <li class="share-row__icon"><a href="#"><i class="icon-twitter"></i></a></li>
-      <li class="share-row__icon"><a href="{{ shares.facebook(data.PATH_FULL + 'event.html', data.PATH_FULL + 'event.html') }}"><i class="icon-facebook"></i></a></li>
-      <li class="share-row__icon"><a href="#"><i class="icon-envelope"></i></a></li>
+      <li class="share-row__icon"><a href="{{ shares.twitter(data.PATH_FULL + context.id + '.html', context.twitter_text, 'roadfromrita') }}"><i class="icon-twitter"></i></a></li>
+      <li class="share-row__icon"><a href="{{ shares.facebook(data.PATH_FULL + context.id + '.html', data.PATH_FULL + context.id + '.html') }}"><i class="icon-facebook"></i></a></li>
+      <li class="share-row__icon"><a href="{{ shares.email(context.headline, data.PATH_FULL + context.id + '.html') }}"><i class="icon-envelope"></i></a></li>
     </ul>
   </div>
   <p class="story-prose__lede only-child">The Texas Tribune and the <em class="italic">Beaumont Enterprise</em> are pleased to present a special event marking the 10th anniversary of Hurricane Rita's landfall on the Texas Gulf Coast, and their forthcoming joint reporting project, Road From Rita.</p>

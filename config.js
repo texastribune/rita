@@ -45,6 +45,10 @@ config.data = {
     {
       fileid: '1Q_gNaRBb2fLy2gT2bsn8WFMJmpp-IjbIksZTAKeIwGI',
       name: 'gallery'
+    },
+    {
+      fileid: '1VIMa2ppG1mrpxaZeTjuZzS75cOZOd8SJEv78k3cSy14',
+      name: 'event'
     }
   ],
   sheets: [

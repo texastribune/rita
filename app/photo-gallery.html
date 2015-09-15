@@ -1,6 +1,7 @@
 {% extends 'layouts/standard.html' %}
 
 {% import 'macros/prose.html' as prose %}
+{% import 'macros/shares.html' as shares %}
 {% set context = data.gallery %}
 
 {% block body_class %}invert{% endblock %}
@@ -13,6 +14,13 @@
   <header class="story-header">
     <h1 class="story-header__headline story-header__headline--invert">{{ context.headline }}</h1>
   </header>
+  <div class="gallery-content__shares">
+    <ul class="share-row">
+      <li class="share-row__icon"><a href="{{ shares.twitter(data.PATH_FULL + context.id + '.html', context.twitter_text, 'roadfromrita') }}"><i class="icon-twitter"></i></a></li>
+      <li class="share-row__icon"><a href="{{ shares.facebook(data.PATH_FULL + context.id + '.html', data.PATH_FULL + context.id + '.html') }}"><i class="icon-facebook"></i></a></li>
+      <li class="share-row__icon"><a href="{{ shares.email(context.headline + ' | Road From Rita', data.PATH_FULL + context.id + '.html') }}"><i class="icon-envelope"></i></a></li>
+    </ul>
+  </div>
   <div class="story-prose gallery-prose">
     {% for item in context.prose %}
     {{ prose[item.type](item.value) }}

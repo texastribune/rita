@@ -36,6 +36,10 @@
     &:hover {
       text-decoration: none;
     }
+
+    .gallery-content & {
+      color: $color-light-sign-green;
+    }
   }
 
   &__subhead {
