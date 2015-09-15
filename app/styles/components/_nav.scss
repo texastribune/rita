@@ -2,7 +2,7 @@
   display: none;
   font-family: $font-sofia-pro-condensed;
 
-  @include susy-media($sidebar-break) {
+  @include susy-media((min-width: $sidebar-break, min-height: $sidebar-height-giveaway-break)) {
     display: block;
     text-align: left;
   }

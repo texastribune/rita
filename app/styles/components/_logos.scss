@@ -5,7 +5,7 @@ $logo-image-height: 25px;
   vertical-align: middle;
 
   &--sidebar {
-    @include susy-media($sidebar-break) {
+    @include susy-media((min-width: $sidebar-break, min-height: $sidebar-height-giveaway-break)) {
       display: inline-block;
       margin-bottom: 1.5rem;
     }

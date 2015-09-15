@@ -7,7 +7,7 @@
   padding: .625rem;
   width: 100%;
 
-  @include susy-media($sidebar-break) {
+  @include susy-media((min-width: $sidebar-break, min-height: $sidebar-height-giveaway-break)) {
     display: block;
     height: 100%;
     padding: 2rem 0 0;
@@ -20,7 +20,7 @@
   &__left {
     float: left;
 
-    @include susy-media($sidebar-break) {
+    @include susy-media((min-width: $sidebar-break, min-height: $sidebar-height-giveaway-break)) {
       float: none;
     }
   }
@@ -28,7 +28,7 @@
   &__right {
     float: right;
 
-    @include susy-media($sidebar-break) {
+    @include susy-media((min-width: $sidebar-break, min-height: $sidebar-height-giveaway-break)) {
       float: none;
     }
   }
@@ -40,7 +40,7 @@
   &__logos {
     display: inline;
 
-    @include susy-media($sidebar-break) {
+    @include susy-media((min-width: $sidebar-break, min-height: $sidebar-height-giveaway-break)) {
       display: block;
       text-align: center;
     }

@@ -5,7 +5,7 @@
     &--desktop {
       display: none;
 
-      @include susy-media($sidebar-break) {
+      @include susy-media((min-width: $sidebar-break, min-height: $sidebar-height-giveaway-break)) {
         display: inline-block;
         height: 65px;
         margin-bottom: 1.5rem;
@@ -26,7 +26,7 @@
       height: 24px;
       vertical-align: middle;
 
-      @include susy-media($sidebar-break) {
+      @include susy-media((min-width: $sidebar-break, min-height: $sidebar-height-giveaway-break)) {
         display: none;
       }
     }
@@ -35,7 +35,7 @@
       height: 24px;
       vertical-align: middle;
 
-      @include susy-media($sidebar-break) {
+      @include susy-media((min-width: $sidebar-break, min-height: $sidebar-height-giveaway-break)) {
         height: 32px;
       }
     }
