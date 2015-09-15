@@ -2,7 +2,7 @@
   @include font-size(18);
   color: $color-dark-storm;
   font-family: $font-georgia;
-  line-height: 1.5;
+  line-height: 1.6;
 
   @include susy-media($sidebar-break) {
     @include font-size(18);
