@@ -21,7 +21,7 @@
       </a>
     </h2>
   <h1 class="sidebar__right project-title">
-    <a class="project-title__link" href="{{ data.PATH_PREFIX }}">
+    <a class="project-title__link" href="{{ data.PATH_PREFIX }}{{ data.LATEST_STORY.slug }}.html">
       <img class="project-title__image project-title__image--mobile" src="{{ data.PATH_PREFIX }}assets/images/logos/mobile-logo.svg" alt="Road to Rita">
       <img class="project-title__image project-title__image--desktop" src="{{ data.PATH_PREFIX }}assets/images/logos/desktop-logo.svg" alt="Road to Rita">
     </a>
@@ -80,6 +80,8 @@
 {% if context.republish %}
 {{ prose.disclosure(context.republish) }}
 {% endif %}
+
+<p class="story-prose__disclosure">The Texas Tribune and the Beaumont Enterprise partnered for a project looking at the 2005 evacuation of Southeast Texas ahead of Hurricane Rita and whether a similar catastrophe can be avoided when the next big storm hits. This website was developed and designed by <a href="http://www.texastribune.org/about/staff/ryan-murphy/">Ryan Murphy</a> and <a href="http://www.texastribune.org/about/staff/ben-hasson/">Ben Hasson</a>.</p>
 </article>
 
 {% include 'partials/storygrid.html' %}
