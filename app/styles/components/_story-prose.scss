@@ -48,6 +48,10 @@
     font-family: $font-sofia-pro-condensed;
     font-weight: 500;
     margin-bottom: 1.5rem;
+
+    @include susy-media($sidebar-break) {
+      @include font-size(22);
+    }
   }
 
   &--border-bottom {

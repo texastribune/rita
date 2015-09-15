@@ -1,19 +1,58 @@
 .nav {
-  display: none;
   font-family: $font-sofia-pro-condensed;
 
-  @include susy-media((min-width: $sidebar-break, min-height: $sidebar-height-giveaway-break)) {
-    display: block;
-    text-align: left;
+  &--desktop {
+    display: none;
+
+    @include susy-media((min-width: $sidebar-break, min-height: $sidebar-height-giveaway-break)) {
+      display: block;
+      text-align: left;
+    }
+  }
+
+  &--mobile {
+    background-color: $color-dark-storm;
+    margin-bottom: 1.5rem;
+
+    @include susy-media((min-width: $sidebar-break, min-height: $sidebar-height-giveaway-break)) {
+      display: none;
+    }
+
+    .event-content & {
+      margin-bottom: 0;
+    }
   }
 
   &__title {
     border-bottom: 2px solid $color-overcast;
+    color: $color-white;
+    display: block;
     letter-spacing: .07em;
     margin-bottom: .625rem;
     margin-left: 1rem;
     margin-right: 1rem;
     padding-bottom: .625rem;
+    text-decoration: none;
     text-transform: uppercase;
+
+    .nav--mobile & {
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: .3125rem;
+      padding-top: .3125rem;
+      text-align: center;
+    }
+  }
+
+  &__dropdown {
+    border-top: 2px solid $color-overcast;
+    display: none;
+    margin-top: .3125rem;
+    padding-bottom: .625rem;
+    padding-top: .3125rem;
+
+    &--visible {
+      display: block;
+    }
   }
 }

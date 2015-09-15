@@ -9,7 +9,7 @@
   &__story {
     @include clearfix;
     font-family: $font-sofia-pro-condensed;
-    margin-bottom: .75rem;
+    margin-bottom: .875rem;
 
     &:last-child {
       margin-bottom: 0;
@@ -58,8 +58,9 @@
 
   &__pub-date {
     @include font-size(14);
+    color: $color-white;
     display: block;
-    line-height: 1.1;
+    line-height: 1.3;
 
     @include susy-media((min-width: $mid-sidebar-break, min-height: $sidebar-height-break)) {
       @include font-size(16);

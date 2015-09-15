@@ -27,7 +27,7 @@
     </a>
   </h1>
 
-  <nav class="nav">
+  <nav class="nav nav--desktop">
     <h3 class="nav__title">Stories</h3>
     <ul class="stories-list">
        {% for story in data.metadata.storylist %}
@@ -49,6 +49,31 @@
     </ul>
   </nav>
 </header>
+
+<nav class="nav nav--mobile">
+  <a class="nav__title" id="js-nav-menu" href="#">Stories <i class="icon-chevron-down"></i></a>
+  <div class="nav__dropdown" id="js-nav-dropdown">
+  <ul class="stories-list">
+     {% for story in data.metadata.storylist %}
+    <li class="stories-list__story">
+      <time class="stories-list__pub-date">{{ data[story.id].pub_date }}</time>
+      {% if story.published %}<a class="stories-list__story-link{% if context.id == story.id %} stories-list__story-link--is-active{% endif %}" href="{{ data.PATH_PREFIX }}{{ story.slug }}.html">{% else %}<span class="stories-list__story-link stories-list__story-link--is-disabled">{% endif %}
+        <span class="stories-list__headline">{{ data[story.id].short_head }}</span>
+      {% if story.published %}</a>{% else %}</span>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  <ul class="extras-list">
+    <li class="extras-list__item">
+      <a class="extras-list__link" href="{{ data.PATH_PREFIX }}event.html">Road From Rita Event</a>
+    </li>
+    <li class="extras-list__item">
+      <a class="extras-list__link" href="{{ data.PATH_PREFIX }}photo-gallery.html">Photo Gallery</a>
+    </li>
+  </ul>
+  </div>
+</nav>
+
 {% endblock %}
 
 {% block content %}
