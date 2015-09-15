@@ -4,6 +4,14 @@
   padding: .625rem;
   width: 100%;
 
+  @include susy-media($sidebar-break) {
+    margin-bottom: 1.5rem;
+
+    .event-page & {
+      margin-bottom: 0;
+    }
+  }
+
   &__container {
     @include container(75em);
     display: table;

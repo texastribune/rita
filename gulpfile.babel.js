@@ -49,7 +49,7 @@ gulp.task('jshint', () => {
     .pipe($.if(!bs.active, $.jshint.reporter('fail')));
 });
 
-gulp.task('scripts', ['jshint'], () => {
+gulp.task('scripts', () => {
   return gulp.src('./app/scripts/**/*.js')
     .pipe(gulp.dest('./dist/scripts'))
     .pipe($.size({title: 'scripts'}));
