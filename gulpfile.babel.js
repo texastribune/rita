@@ -30,6 +30,9 @@ let fullPath = url.format({
 }) + '/';
 data.PATH_FULL = fullPath;
 
+let published_stories = data.metadata.storylist.filter((d) => d.published);
+data.LATEST_STORY = published_stories[published_stories.length - 1];
+
 let env = nunjucks.configure(config.templateFolder, {autoescape: false});
 
 env.addFilter('widont', (str) => {
