@@ -4,7 +4,7 @@
   <div class="other-stories__grid">
   {% for story in data.metadata.storylist|selectattr('published') %}
     {% if story.id != context.id %}
-    <a class="other-stories__cell story-box" href="{{ data.PATH_PREFIX }}{{ story.slug }}.html">
+    <a class="other-stories__cell story-box js-story-grid-cell" href="{{ data.PATH_PREFIX }}{{ story.slug }}.html">
       <img class="story-box__image" src="{{ data.PATH_PREFIX }}assets/images/{{ data[story.id].lead_art.photo_url }}">
       <header class="story-box__blurb">
         <h3 class="story-box__header">{{ data[story.id].short_head }}</h3>
