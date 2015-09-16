@@ -1,0 +1,31 @@
+.graphic {
+  @extend %content-padding;
+  @include clearfix;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  max-width: 40.625rem;
+
+  &__img {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  &__map {
+    float: right;
+    margin-left: 1rem;
+    max-width: 45%;
+  }
+
+  &__blurb {
+    @include font-size(16);
+    color: $color-light-storm;
+    font-family: $font-sofia-pro-condensed;
+  }
+
+  &__source {
+    @include font-size(12);
+    color: $color-light-storm;
+    font-family: $font-sofia-pro-condensed;
+    text-align: right;
+  }
+}

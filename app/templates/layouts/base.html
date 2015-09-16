@@ -16,7 +16,11 @@
 {% block content %}{% endblock %}
 </main>
 {% block footer %}{% endblock %}
+
+{% block scripts %}
 <script src="{{ data.PATH_PREFIX }}scripts/main.js"></script>
+{% endblock %}
+
 {% include 'partials/ga.html' %}
 </body>
 </html>
