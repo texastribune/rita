@@ -38,3 +38,12 @@
 {% include 'partials/storygrid.html' %}
 </div>
 {% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="{{ data.PATH_PREFIX }}scripts/raf.js"></script>
+  <script src="{{ data.PATH_PREFIX }}scripts/layzr.min.js"></script>
+  <script>var layzr = new Layzr({
+    threshold: 50
+  });</script>
+{% endblock %}

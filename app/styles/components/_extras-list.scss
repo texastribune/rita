@@ -18,6 +18,14 @@
       @include font-size(20);
     }
 
+    &--long {
+      display: none;
+
+      @include susy-media((min-width: $mid-sidebar-break, min-height: $sidebar-height-break)) {
+        display: inline;
+      }
+    }
+
     &:hover {
       background-color: $color-light-sign-green;
     }

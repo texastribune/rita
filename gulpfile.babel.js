@@ -86,7 +86,7 @@ gulp.task('templates', () => {
   return gulp.src(['./app/**/*.html', `!${config.templateFolder}/**`])
     .pipe(nunjuckify)
     .pipe(gulp.dest('./.tmp'))
-    .pipe($.if(args.production, $.minifyHtml()))
+    .pipe($.if(args.production, $.htmlmin({collapseWhitespace: true})))
     .pipe($.if(args.production, gulp.dest('./dist')))
     .pipe($.size({title: 'templates'}));
 });
@@ -143,8 +143,30 @@ gulp.task('clean', cb => {
   return del(['./.tmp/**', './dist/**', '!dist/.git'], {dot: true}, cb);
 });
 
+gulp.task('rev', () => {
+  return gulp.src(['./dist/**/*.css', './dist/**/*.js', './dist/assets/images/**/*'], { base: './dist' })
+    .pipe($.rev())
+    .pipe(gulp.dest('./dist'))
+    .pipe($.rev.manifest())
+    .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('revreplace', ['rev'], () => {
+  var manifest = gulp.src('./dist/rev-manifest.json');
+
+  return gulp.src('./dist/**/*.html')
+    .pipe($.revReplace({manifest: manifest}))
+    .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('gzip', () => {
+  return gulp.src('./dist/**/*.{html,js,css,json,eot,ttf,svg}')
+    .pipe($.gzip({append: false}))
+    .pipe(gulp.dest('./dist'));
+});
+
 gulp.task('build', ['clean'], cb => {
-  runSequence(['assets', 'fonts', 'images', 'scripts', 'styles', 'templates'], cb);
+  runSequence(['assets', 'fonts', 'images', 'scripts', 'styles', 'templates'], ['revreplace'], ['gzip'], cb);
 });
 
 gulp.task('default', ['build']);
